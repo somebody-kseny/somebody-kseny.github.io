@@ -1,0 +1,19 @@
+{
+    "name": "cv",
+    "version": "1.0.0",
+    "description": "CV frontend 2025",
+    "license": "ISC",
+    "author": "Kseniya Samoylova",
+    "type": "commonjs",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "node ./build.mjs",
+        "dev": "node ./build.mjs && python3 -m http.server --directory dist"
+    },
+    "dependencies": {
+        "handlebars": "^4.7.8"
+    },
+    "devDependencies": {
+        "prettier": "^3.6.2"
+    }
+}
