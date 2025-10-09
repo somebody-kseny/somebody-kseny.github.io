@@ -1,3 +1,154 @@
+body {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Montserrat', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+
+    --color-accent: #14bcc1;
+    --color-main: #011638;
+    --color-h1: #757083;
+
+    --size-base-d2: 12px;
+    --size-base: 20px;
+    --size-base-x2: 28px;
+
+    --border-radius-base: 10px;
+    --border-radius-x2: 20px;
+
+    --size-mini: 2px;
+    --size-mini-x2: 4px;
+}
+
+.wrapper {
+    display: grid;
+    grid-template:
+        'a h'
+        'a m' / 2fr 5fr;
+
+    max-width: 1000px;
+    padding: 0;
+}
+
+header {
+    grid-area: h;
+}
+
+aside {
+    grid-area: a;
+
+    display: flex;
+    flex-direction: column;
+
+    border-top: unset;
+    border-bottom: unset;
+    border-right: 3px solid var(--color-accent);
+}
+
+main {
+    grid-area: m;
+}
+
+@media screen and (max-width: 719px) {
+    .wrapper {
+        grid-template:
+            'h'
+            'a'
+            'm';
+        width: 100%;
+    }
+
+    aside {
+        border-right: unset;
+        border-top: 3px solid var(--color-accent);
+        border-bottom: 3px solid var(--color-accent);
+    }
+}
+
+.block {
+    padding: var(--size-base);
+}
+
+#aside-card {
+    position: sticky;
+    top: var(--size-base);
+}
+
+#photo {
+    width: 100%;
+    max-width: 250px;
+    border-radius: var(--border-radius-base);
+
+    margin-bottom: var(--size-base);
+}
+
+.contacts-line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: left;
+}
+
+.icon {
+    fill: var(--color-accent);
+    width: 24px;
+    height: 24px;
+    margin-right: var(--size-base-d2);
+}
+
+p {
+    color: var(--color-main);
+    padding-top: var(--size-mini-x2);
+}
+
+.underlined {
+    text-decoration: underline var(--size-mini) var(--color-accent);
+    text-underline-offset: var(--size-mini-x2);
+}
+
+.bold {
+    font-weight: 600;
+}
+
+h1,
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-size: 2.5em;
+}
+
 h1 {
-    color: blueviolet;
+    line-height: 1.2em;
+    color: var(--color-h1);
+}
+
+h2 {
+    font-size: 2em;
+    color: var(--color-accent);
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 1em;
+    color: var(--color-main);
+    padding: var(--size-mini);
+}
+
+ul {
+    list-style: disc inside;
+}
+
+li {
+    margin-left: var(--size-base-d2);
+}
+
+li::marker {
+    color: var(--color-accent);
+    font-size: 1.5em;
 }

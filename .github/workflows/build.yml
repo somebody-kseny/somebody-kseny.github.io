@@ -2,7 +2,7 @@ name: NodeJS with Webpack
 
 on:
     push:
-        branches: ['master']
+        branches: ['work']
 
 jobs:
     build:
@@ -20,6 +20,10 @@ jobs:
               run: |
                   npm install
                   npm run build
+              env:
+                  TELEGRAM: ${{ vars.TELEGRAM }}
+                  TEL: ${{ vars.TEL }}
+                  EMAIL: ${{ vars.EMAIL }}
 
             - name: Upload static files as artifact
               id: deployment
