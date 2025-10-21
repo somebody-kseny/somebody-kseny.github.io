@@ -15,28 +15,37 @@
     </head>
     <body>
         <div class='wrapper'>
-            <header class='block'>
-                <h1>{{name}}</h1>
-                <h3>{{profession}}</h3>
-            </header>
-            <aside class='block'>
-                <div id='aside-card'>
-                    <img src='static/photo.png' alt='Фотография' id='photo' />
-                    <section>
-                        {{#each contacts}}
-                            <div class='contacts-line'>
-                                {{inlineSvg this.icon}}
-                                {{#isLink this}}
-                                    <a href={{this.href}}>{{this.text}}</a>
-                                {{else}}
-                                    <p>{{this.text}}</p>
-                                {{/isLink}}
-                            </div>
-                        {{/each}}
-                    </section>
+            <div class='header'>
+                <img src='static/photo.png' alt='Фотография' id='photo' />
+                <div class='block header-text'>
+                    <header>
+                        <h1>{{name}}</h1>
+                        <h3>{{profession}}</h3>
+                    </header>
+                    <p>{{{summary}}}</p>
                 </div>
-            </aside>
-            <main class='block'>
+            </div>
+
+            <section class='block contacts'>
+                <div class='contacts-line'>
+                    {{inlineSvg 'location'}}
+                    <p>{{location.text}}</p>
+                </div>
+                <div class='contacts-line'>
+                    {{inlineSvg 'link'}}
+                    <ul class='contacts-line-ul'>
+                        {{#each contacts}}
+                            {{#isLink this}}
+                                <li><a href={{this.href}}>{{this.text}}</a></li>
+                            {{else}}
+                                <li>{{this.text}}</li>
+                            {{/isLink}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </section>
+
+            <main>
                 <section>
                     <h2>{{summary.header}}</h2>
                     <p>{{summary.subheader}}</p>
@@ -56,12 +65,7 @@
                         <h3 class='underlined'>{{this.header}}</h3>
                         <p class='underlined'>{{this.time}}</p>
                         <p>{{this.subheader}}</p>
-                        <p>{{this.summary}}</p>
-                        <ul>
-                            {{#each this.list}}
-                                <li>{{this}}</li>
-                            {{/each}}
-                        </ul>
+                        {{renderExpSummary this.summary}}
                     {{/each}}
                 </section>
                 <section>
@@ -79,8 +83,23 @@
                         </ul>
                     {{/each}}
                 </section>
+                <section>
+                    <h2>{{skills.header}}</h2>
+                    {{#each skills.list}}
+                        <p>
+                            <span class='bold highlighted'>{{this.header}}:
+                            </span>
+                            {{this.summary}}</p>
+                    {{/each}}
+                </section>
             </main>
         </div>
+
+        <script>
+            if (document.body.clientWidth <= 820) { const photo =
+            document.querySelector('#photo'); const header =
+            document.querySelector('header'); header.appendChild(photo); }
+        </script>
 
     </body>
 </html>
