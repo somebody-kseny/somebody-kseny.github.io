@@ -50,8 +50,6 @@ edu:
           list:
               - header: Основной курс "Системный архитектор", web-разработка
                 time: 2021
-              - header: Семестровый курс "Введение в С/С++"
-                time: 2020
               - header: Семестровый курс "Базовое администрирование linux"
                 time: 2019
         - header: МГТУ им. Н.Э. Баумана
@@ -62,9 +60,15 @@ edu:
 skills:
     header: Навыки
     list:
-        - header: Core
-          summary: React, TypeScript, Redux, Electron, Node.js, Express
-        - header: Tools
-          summary: Jest, Storybook, Docker, Git, CI/CD, Jira, Agile, Figma
+        - header: Клиентская часть
+          summary: React, TypeScript, Redux, Electron
+        - header: Серверная часть
+          summary: Node.js, Express, Docker
+        - header: Автоматическое тестирование
+          summary: Jest, Storybook, E2E
+        - header: Инструменты разработки
+          summary: Webpack, npm/pnpm, Git, CI/CD, Jira, Figma, фичефлаги и AB-эксперименты
+        - header: Процессы
+          summary: Agile, код-ревью, техническая документация
         - header: Языки
           summary: Pусский -- родной, Английский -- B1
