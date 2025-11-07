@@ -68,8 +68,8 @@ skills:
         - header: Автоматическое тестирование
           summary: Jest, Storybook, E2E
         - header: Инструменты разработки
-          summary: Webpack, npm/pnpm, Git, CI/CD, Jira, Figma
+          summary: Webpack, Rollup, pnpm, lerna, Git, Figma
         - header: Процессы
-          summary: Agile, код-ревью, техническая документация
+          summary: CI/CD, Agile, Jira, код-ревью, техническая документация
         - header: Языки
           summary: Pусский -- родной, Английский -- B1
